@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 == "clean" ]; then
+if [ "$1" == "clean" ]; then
   echo "___ cleaning up ___"
   bash ./flatpak/clean.sh
   bash ./tarball/clean.sh
