@@ -1,5 +1,5 @@
 # WebCord_flatpak_build
-A "wrapper" repository for building flatpaks of WebCord, doesn't build successfully as of now.
+A "wrapper" repository for building flatpaks of WebCord, BUILDS FINE!
 
 `deps.sh` will install all needed dependencies. 
 
