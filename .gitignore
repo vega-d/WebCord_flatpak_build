@@ -1,1 +1,8 @@
 /.idea/
+/WebCord_tarball.tar.gz
+/tarball/WebCord_compiled/
+/flatpak/.flatpak-builder/
+/flatpak/build/
+/flatpak/repo/
+/flatpak/webcord.flatpak
+/tarball/WebCord/

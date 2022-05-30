@@ -1,13 +1,8 @@
 # WebCord_flatpak_build
 A "wrapper" repository for building flatpaks of WebCord, doesn't build successfully as of now.
 
-To try building this app all dependencies I needed were installed with a single command of 
-```sudo dnf install flatpak-builder npm```
-A fedora 36 container from dockerhub was used.
+`deps.sh` will install all needed dependencies. 
 
-Additionally now I'm looking into using yarn for lock file generation, so to install it globally in the container:
-```sudo npm install --global yarn``` 
+`build.sh` will do a build from scratch. 
 
-to build, do 
-
-```./flatpak_build.sh io.github.vegad.webcord.yml```
+to build flatpak from the tarball without remaking latter use `flatpak_build.sh` in `flatpak` folder.

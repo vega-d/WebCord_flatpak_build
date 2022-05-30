@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=webcord
+Exec=webcord-run
+Terminal=false
+Type=Application
+Icon=com.github.spacingbat.webcord
+StartupWMClass=Webcord

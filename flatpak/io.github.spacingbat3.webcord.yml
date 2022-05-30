@@ -1,4 +1,4 @@
-app-id: io.github.vegad.webcord
+app-id: io.github.spacingbat3.webcord
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 base: org.electronjs.Electron2.BaseApp
@@ -12,6 +12,7 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --share=network
+  - --device=all
 modules:
   - name: webcord
     buildsystem: simple
@@ -28,6 +29,7 @@ modules:
         commands:
         - zypak-wrapper /app/bin/webcord "$@"
     build-commands:
-      - install -D run.sh /app/bin/run.sh
-      - ls ./main/
+      - install -Dm775 run.sh /app/bin/run.sh
+      - chmod +x ./main/*
+      - ls -la main
       - for i in $(ls main); do install -Dm4755 "./main/$i" "/app/bin/$i"; done
