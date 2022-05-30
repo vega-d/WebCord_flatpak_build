@@ -16,7 +16,7 @@ npm run build
 
 electron-builder -- --linux --dir --config ../electron-builder.yml
 
-cp -r ./dist/linux-unpacked/ ../WebCord_compiled/
+cp "./dist/linux-unpacked/" "../WebCord_compiled/"
 
 cd ..
 
