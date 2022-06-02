@@ -4,29 +4,30 @@ runtime-version: '21.08'
 base: org.electronjs.Electron2.BaseApp
 base-version: '21.08'
 sdk: org.freedesktop.Sdk
-command: run.sh
+command: webcord-run
 separate-locales: false
 finish-args:
   - --share=ipc
-  - --socket=fallback-x11
-  - --device=dri
+  - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
   - --share=network
   - --device=all
+  
 modules:
   - name: webcord
     buildsystem: simple
     build-options:
     sources:
-      #- type: archive
-      #  url: https://github.com/SpacingBat3/WebCord/archive/refs/tags/v3.2.0.tar.gz
-      #  sha256: 472eea406b220d28ad2eb5d3da65ec39ddb9503a0309e190e87af095943243b2
       - type: archive
-        path: ../WebCord_tarball.tar.gz
+        url: https://github.com/vega-d/WebCord_flatpak_build/releases/download/v0.0-rolling/WebCord_tarball.tar.gz
         dest: ./main
+        sha256: ebc9ec1cb38819722b78705f83e5d07e32b8c75b4cf32f9bb72b94b447a463b8
+      #- type: archive
+      #  path: ../WebCord_tarball.tar.gz
+      #  dest: ./main
       - type: script
-        dest-filename: run.sh
+        dest-filename: webcord-run
         commands:
         - zypak-wrapper /app/bin/webcord "$@"
       - type: file
@@ -41,7 +42,7 @@ modules:
         path: io.github.spacingbat3.webcord.metainfo.xml
     build-commands:
       - ls -a
-      - install -Dm775 run.sh /app/bin/run.sh
+      - install -Dm775 webcord-run /app/bin/webcord-run
       - mkdir /app/share/applications/
       - mkdir /app/share/metainfo/
       - install -D io.github.spacingbat3.webcord.desktop /app/share/applications/

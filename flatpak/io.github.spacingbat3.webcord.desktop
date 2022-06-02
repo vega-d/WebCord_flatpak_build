@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=WebCord
-Exec=run.sh
+Exec=webcord-run
 Terminal=false
 Type=Application
 Icon=io.github.spacingbat3.webcord
