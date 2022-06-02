@@ -12,6 +12,8 @@ cd WebCord
 
 npm install
 
+sudo chown -R 1001:121 "/github/home/.npm"
+
 npm run build
 
 sudo electron-builder -- --linux --dir --config ../electron-builder.yml
