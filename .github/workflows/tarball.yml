@@ -39,7 +39,7 @@ jobs:
           uses: djnicholson/release-action@v2.10
           with:
             # GitHub auth token
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.FP_TOKEN }}
             # Name for the asset
             asset-name: WebCord_tarball.tar.gz
             # File to release
