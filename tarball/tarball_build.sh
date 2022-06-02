@@ -10,6 +10,8 @@ git clone https://github.com/SpacingBat3/WebCord
 
 cd WebCord
 
+sudo chown -R 1001:121 "/github/home/.npm"
+
 npm install
 
 sudo chown -R 1001:121 "/github/home/.npm"
