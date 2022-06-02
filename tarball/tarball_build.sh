@@ -14,7 +14,7 @@ npm install
 
 npm run build
 
-electron-builder -- --linux --dir --config ../electron-builder.yml
+sudo electron-builder -- --linux --dir --config ../electron-builder.yml
 
 cp "./dist/linux-unpacked/" "../WebCord_compiled/"
 
