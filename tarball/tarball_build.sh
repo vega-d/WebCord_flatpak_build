@@ -10,8 +10,6 @@ git clone https://github.com/SpacingBat3/WebCord
 
 cd WebCord
 
-sudo chown -R 1001:121 "/github/home/.npm"
-
 npm install
 
 sudo chown -R 1001:121 "/github/home/.npm"
@@ -28,7 +26,7 @@ npm run build
 
 sudo electron-builder -- --linux --dir --config ../electron-builder.yml
 
-cp "./dist/linux-unpacked/" "../WebCord_compiled/"
+cp -r "./dist/linux-unpacked/" "../WebCord_compiled/"
 
 cd ..
 
