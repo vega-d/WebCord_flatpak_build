@@ -8,4 +8,3 @@ elif [ -x "$(command -v zypper)" ];  then sudo zypper install $packagesNeeded
 else echo "FAILED TO INSTALL PACKAGE: Package manager not found. You must manually install: $packagesNeeded">&2; fi
 
 sudo npm install --global electron-builder
-sudo chown -R 1001:121 "/github/home/.npm"
