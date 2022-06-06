@@ -12,11 +12,21 @@ cd WebCord
 
 npm install
 
+sudo chown -R 1001:121 "/github/home/.npm"
+
 npm run build
 
-electron-builder -- --linux --dir --config ../electron-builder.yml
+sudo chown -R 1001:121 "/github/home/.npm"
 
-cp "./dist/linux-unpacked/" "../WebCord_compiled/"
+npm install
+
+sudo chown -R 1001:121 "/github/home/.npm"
+
+npm run build
+
+sudo electron-builder -- --linux --dir --config ../electron-builder.yml
+
+cp -r "./dist/linux-unpacked/" "../WebCord_compiled/"
 
 cd ..
 
