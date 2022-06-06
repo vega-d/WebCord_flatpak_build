@@ -1,14 +1,22 @@
 #!/bin/bash
 
-TARBALL_NAME="WebCord_tarball.tar.gz"
+
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
 cd $SCRIPT_DIR
 
-git clone https://github.com/SpacingBat3/WebCord
+wget https://github.com/SpacingBat3/WebCord/releases/latest
+LATEST_RELEASE="$(cat latest | grep tar.gz | grep href | awk 'BEGIN { FS = "\"" }; { print $2 }')";
 
-cd WebCord
+wget "https://github.com$LATEST_RELEASE"
+
+TAG_NAME=$(ls | find -- *.tar.gz | sed -e "s/.tar.gz$//")
+TARBALL_NAME="WebCord_$TAG_NAME.tar.gz"
+
+tar -xvzf v*
+
+cd WebCord-*
 
 npm install
 
@@ -32,6 +40,10 @@ cd ..
 
 tar -czvf $TARBALL_NAME WebCord_compiled/
 
-mv $TARBALL_NAME ../
+if [ $(wc -c <"./$TARBALL_NAME") -gt 45 ]; then
+  mv $TARBALL_NAME ../
 
-echo "____ Finished building tarball ____"
+  echo "____ Finished building tarball ____"
+else
+  echo "____ TARBALL FAILED TO BUILD, CHECK SIZE ____"
+fi
