@@ -8,6 +8,3 @@ fi
 
 echo "___ creating tarball ___"
 bash ./tarball/tarball_build.sh
-
-echo "___ creating flatpak ___"
-bash ./flatpak/flatpak_build.sh
