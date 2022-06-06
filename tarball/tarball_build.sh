@@ -42,7 +42,7 @@ tar -czvf $TARBALL_NAME WebCord_compiled/
 
 if [ $(wc -c <"./$TARBALL_NAME") -gt 45 ]; then
   mv $TARBALL_NAME ../
-  echo "tag=$TAG_NAME}" >> $GITHUB_ENV
+  echo "tag=$TAG_NAME" >> $GITHUB_ENV
   echo "____ Finished building tarball ____"
 else
   echo "____ TARBALL FAILED TO BUILD, CHECK SIZE ____"
