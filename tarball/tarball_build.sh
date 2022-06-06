@@ -6,12 +6,12 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && 
 
 cd $SCRIPT_DIR
 
-wget https://github.com/SpacingBat3/WebCord/releases/latest
-LATEST_RELEASE="$(cat latest | grep tar.gz | grep href | awk 'BEGIN { FS = "\"" }; { print $2 }')";
 
-wget "https://github.com$LATEST_RELEASE"
+TAG_NAME=$(bash ./get_latest_version_string.sh)
 
-TAG_NAME=$(ls | find -- *.tar.gz | sed -e "s/.tar.gz$//")
+wget "https://github.com/SpacingBat3/WebCord/archive/refs/tags/$TAG_NAME.tar.gz"
+
+
 TARBALL_NAME="WebCord_$TAG_NAME.tar.gz"
 
 tar -xvzf v*
